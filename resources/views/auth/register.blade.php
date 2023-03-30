@@ -1,4 +1,8 @@
 <x-guest-layout>
+    <x-slot:title>
+        {{ config('app.name', 'Laravel') }} - {{ __('Register Page') }}
+    </x-slot:title>
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -12,6 +16,15 @@
             <x-text-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required
                 autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')"
+                class="p-1 pl-2 mt-2 border border-red-500 rounded-md bg-slate-200/75" />
+        </div>
+
+        <!-- Username -->
+        <div class="mt-4">
+            <x-input-label for="username" :value="__('username')" />
+            <x-text-input id="username" class="block w-full mt-1" type="text" name="username" :value="old('username')"
+                required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('username')"
                 class="p-1 pl-2 mt-2 border border-red-500 rounded-md bg-slate-200/75" />
         </div>
 

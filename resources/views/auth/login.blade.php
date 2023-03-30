@@ -1,6 +1,7 @@
 <x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-slot:title>
+        {{ config('app.name', 'Laravel') }} - {{ __('Login Page') }}
+    </x-slot:title>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -8,6 +9,9 @@
         <div class="py-2 mb-3 text-sm text-white md:text-2xl">
             {{ __('Login') }}
         </div>
+
+        <!-- Session Status -->
+        <x-auth-session-status :status="session('status')" />
 
         <!-- Email Address -->
         <div>
