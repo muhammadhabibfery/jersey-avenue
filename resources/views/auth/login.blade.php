@@ -13,12 +13,12 @@
         <!-- Session Status -->
         <x-auth-session-status :status="session('status')" />
 
-        <!-- Email Address -->
+        <!-- Username / Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required
+            <x-input-label for="username" :value="__('Username / Email')" />
+            <x-text-input id="username" class="block w-full mt-1" type="text" name="username" :value="old('username')" required
                 autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')"
+            <x-input-error :messages="$errors->get('username')"
                 class="p-1 pl-2 mt-2 border border-red-500 rounded-md bg-slate-200/75" />
         </div>
 
@@ -44,7 +44,7 @@
 
         <div class="block mt-4">
             <x-primary-button class="justify-center w-full text-center">
-                {{ __('Log in') }}
+                {{ __('Login') }}
             </x-primary-button>
         </div>
 
@@ -59,7 +59,7 @@
                 @if (Route::has('password.request'))
                 <a class="text-sm text-white underline rounded-md hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    {{ __('Forgot password?') }}
                 </a>
                 @endif
             </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\RedirectResponse;
+
 class VerifyEmailController extends Controller
 {
     /**
@@ -22,7 +23,7 @@ class VerifyEmailController extends Controller
             event(new Verified($request->user()));
 
         if (auth()->check())
-            $route = session()->has('cart') ? session('cart') : 'home';
+            $route = session()->has('cart') ? session()->pull('cart') : 'home';
 
         return to_route($route)->with(
             'status',

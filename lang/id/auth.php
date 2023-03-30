@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
+    'failed' => 'Username / Email dan Password tidak sesuai.',
     'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'throttle' => 'Terlalu banyak percobaan masuk. Silahkan coba lagi dalam :seconds detik.',
     'registered' => [
         'title' => 'Registrasi berhasil!',
         'paragraph' => 'Silahkan cek email anda untuk verifikasi email.',

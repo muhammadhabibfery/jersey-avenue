@@ -29,7 +29,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (!$request->user()->hasVerifiedEmail())
+            return to_route('verification.notice');
+
+        return session()->has('cart')
+            ? to_route(session()->pull('cart'))
+            : redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
