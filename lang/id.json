@@ -1,8 +1,14 @@
 {
+    "Account not found": "Akun tidak ditemukan",
     "Register Page": "Halaman Registrasi",
     "Register": "Daftar",
     "Name": "Nama",
     "Confirm Password": "Konfirmasi Password",
     "Already registered? Login": "Sudah terdaftar? Login",
+    "Verify Email Page": "Halaman verifikasi email",
+    "Verification Email Address": "Verifikasi Alamat Email",
+    "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.": "Terima kasih telah mendaftar! Sebelum memulai, dapatkah Anda memverifikasi alamat email Anda dengan mengeklik tautan yang baru saja kami kirimkan melalui email kepada Anda? Jika Anda tidak menerima email tersebut, kami dengan senang hati akan mengirimkan ulang verifikasi email kepada Anda",
+    "Resend Verification Email": "Kirim ulang verifikasi email",
+    "Log Out": "Keluar",
     "Login Page": "Halman Login"
 }

@@ -50,6 +50,7 @@ class RegisteredUserController extends Controller
                 'status',
                 [
                     'title' => trans('auth.registered.title'),
+                    'icon' => '📩',
                     'paragraph' => trans('auth.registered.paragraph')
                 ]
             );

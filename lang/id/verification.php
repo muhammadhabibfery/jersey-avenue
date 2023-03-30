@@ -18,4 +18,8 @@ return [
     'paragraph1' => 'Klik tombol di bawah untuk memverifikasi alamat email Anda.',
     'action' => 'Verifikasi Alamat Email',
     'paragraph2' => 'Jika Anda tidak membuat akun, tidak diperlukan tindakan lebih lanjut.',
+    'title' => 'Tautan verifikasi telah dikirim',
+    'paragraph' => 'Silahkan cek email anda untuk verifikasi akun anda',
+    'verified' => 'Verifikasi email berhasil!',
+    'verified-login' => 'Silahkan masuk untuk memulai perjalanan anda',
 ];
