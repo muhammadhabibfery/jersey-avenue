@@ -14,5 +14,8 @@
     "Login": "Masuk",
     "Remember me": "Ingat saya",
     "Doesn't have an account? Register": "Belum punya akun? Daftar",
-    "Forgot password?": "Lupa password"
+    "Forgot password?": "Lupa password?",
+    "Forgot your password? No problem. Just let us know your email address and we will email you a pass word reset link that will allow you to choose a new one.": "Lupa password Anda? Tidak masalah. Cukup beri tahu kami alamat email Anda dan kami akan mengirim email kepada Anda link reset password yang memungkinkan Anda memilih yang baru.",
+    "Email Password Reset Link": "Kirim link reset password",
+    "Back to login": "Kembali ke login"
 }

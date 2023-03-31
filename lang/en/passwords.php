@@ -14,9 +14,14 @@ return [
     */
 
     'reset' => 'Your password has been reset.',
-    'sent' => 'We have emailed your password reset link.',
+    'sent' => 'Password reset link has been sent',
     'throttled' => 'Please wait before retrying.',
     'token' => 'This password reset token is invalid.',
     'user' => "We can't find a user with that email address.",
+    "subject" => "Reset Password Notification",
+    "paragraph1" => "You are receiving this email because we received a password reset request for your account.",
+    "action" => 'Reset Password',
+    "paragraph2" => "This password reset link will expire in :count minutes.",
+    "paragraph3" => "If you did not request a password reset, no further action is required."
 
 ];

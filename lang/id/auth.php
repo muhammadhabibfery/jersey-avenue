@@ -20,5 +20,8 @@ return [
         'title' => 'Registrasi berhasil!',
         'paragraph' => 'Silahkan cek email anda untuk verifikasi email.',
     ],
+    'password' => [
+        'paragraph' => 'Silahkan cek email anda untuk mereset password anda.',
+    ],
 
 ];

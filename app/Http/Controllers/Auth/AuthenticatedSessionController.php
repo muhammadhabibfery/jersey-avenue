@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -32,6 +33,9 @@ class AuthenticatedSessionController extends Controller
         if (!$request->user()->hasVerifiedEmail())
             return to_route('verification.notice');
 
+        // if (checkRole(User::$roles[1], $request->user()->role))
+        //     return to_route('filament.pages.dashboard');
+
         return session()->has('cart')
             ? to_route(session()->pull('cart'))
             : redirect()->intended(RouteServiceProvider::HOME);
@@ -48,6 +52,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return to_route('login');
     }
 }

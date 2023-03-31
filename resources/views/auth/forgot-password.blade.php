@@ -1,7 +1,10 @@
 <x-guest-layout>
-    <div class="mb-4 text-sm text-white">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password
-        reset link that will allow you to choose a new one.') }}
+    <x-slot:title>
+        {{ config('app.name', 'Laravel') }} - {{ __('Login Page') }}
+    </x-slot:title>
+
+    <div class="mb-4 text-xs text-slate-300 md:text-lg">
+        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a pass word reset link that will allow you to choose a new one.') }}
     </div>
 
     <!-- Session Status -->

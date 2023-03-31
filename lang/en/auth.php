@@ -20,4 +20,7 @@ return [
         'title' => 'Registration successfully!',
         'paragraph' => 'Please check your email for email verification.',
     ],
+    'password' => [
+        'paragraph' => 'Please check your email for reset your password.',
+    ],
 ];
