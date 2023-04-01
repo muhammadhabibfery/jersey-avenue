@@ -19,7 +19,7 @@ trait EmailVerificationValidationTest
     {
         $this->withExceptionHandling();
 
-        $res = $this->get($this->getVerificationUrl($this->userNotVerified->id, 'abc@gmail.com'));
+        $res = $this->get(route('verification.verify', $this->verifyData($this->userNotVerified->id, 'abc@gmail.com')));
 
         $res->assertForbidden();
         $this->assertFalse($this->userNotVerified->fresh()->hasVerifiedEmail());
