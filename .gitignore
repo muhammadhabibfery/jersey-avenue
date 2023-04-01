@@ -19,5 +19,6 @@ yarn-error.log
 /.vscode
 Tasks.md
 ERD.wsd
-/tests/Feature/Auth
+/tests/Feature/Auth/PasswordConfirmationTest.php
+/tests/Feature/Auth/PasswordUpdateTest.php
 /tests/Feature/ProfileTest.php

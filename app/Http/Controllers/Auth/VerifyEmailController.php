@@ -22,14 +22,18 @@ class VerifyEmailController extends Controller
         if ($request->user()->markEmailAsVerified())
             event(new Verified($request->user()));
 
-        if (auth()->check())
+        if (auth()->check()) {
             $route = session()->has('cart') ? session()->pull('cart') : 'home';
+            $paragraph = null;
+        } else {
+            $paragraph = trans('verification.verified-login');
+        }
 
         return to_route($route)->with(
             'status',
             [
                 'title' => trans('verification.verified'),
-                'paragraph' => trans('verification.verified-login')
+                'paragraph' => $paragraph
             ]
         );
     }
