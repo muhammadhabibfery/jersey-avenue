@@ -47,6 +47,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public static $status = ['ACTIVE', 'INACTIVE'];
 
     /**
+     * The attributes of user's image directory.
+     */
+    public static $directory = 'avatars';
+
+    /**
      * Get the orders for the user.
      */
     public function orders(): HasMany

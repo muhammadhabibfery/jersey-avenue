@@ -1,7 +1,7 @@
 <x-guest-layout>
-    <x-slot:title>
+    <x-slot name="title">
         {{ config('app.name', 'Laravel') }} - {{ __('Login Page') }}
-    </x-slot:title>
+    </x-slot>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -16,8 +16,8 @@
         <!-- Username / Email Address -->
         <div>
             <x-input-label for="username" :value="__('Username / Email')" />
-            <x-text-input id="username" class="block w-full mt-1" type="text" name="username" :value="old('username')" required
-                autofocus autocomplete="username" />
+            <x-text-input id="username" class="block w-full mt-1" type="text" name="username" :value="old('username')"
+                required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('username')"
                 class="p-1 pl-2 mt-2 border border-red-500 rounded-md bg-slate-200/75" />
         </div>

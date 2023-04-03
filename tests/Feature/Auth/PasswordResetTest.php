@@ -31,7 +31,7 @@ class PasswordResetTest extends TestCase
         $res = $this->get(route('password.request'));
 
         $res->assertOk()
-            ->assertSeeText(trans('Email Password Reset Link'));
+            ->assertSee(trans('Email Password Reset Link'));
     }
 
 
@@ -52,7 +52,7 @@ class PasswordResetTest extends TestCase
         $res = $this->get(route('password.reset', 'token123'));
 
         $res->assertOk()
-            ->assertSeeText(trans('Reset Password'));
+            ->assertSee(trans('Reset Password'));
     }
 
     /** @test */

@@ -1,7 +1,7 @@
 <x-guest-layout>
-    <x-slot:title>
-        {{ config('app.name', 'Laravel') }} - {{ __('Register Page') }}
-    </x-slot:title>
+    <x-slot name="title">
+        {{ config('app.name', 'Laravel') }} - {{ __('Login Page') }}
+    </x-slot>
 
     <form method="POST" action="{{ route('register') }}">
         @csrf

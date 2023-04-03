@@ -1,17 +1,21 @@
 <x-app-layout>
-    <x-slot:title>
+    <x-slot name="title">
         {{ config('app.name', 'Laravel') }} - {{ __('Register Page') }}
-    </x-slot:title>
-
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
     </x-slot>
 
+    <x-slot name="header">
+        <h1 class="text-lg font-semibold leading-tight text-gray-800 sm:text-lg md:text-2xl">
+            {{ __('Dashboard') }}
+        </h1>
+    </x-slot>
+
+
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <!-- Session Status -->
+            <x-auth-session-status :status="session('status')" class="mb-6" />
+
+            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>

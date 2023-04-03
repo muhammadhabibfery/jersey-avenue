@@ -35,20 +35,8 @@ abstract class TestCase extends BaseTestCase
     /**
      * Delete file(s).
      */
-    public function deleteFile(string $directory, string|array $fileName, ?bool $delete = false): void
+    public function deleteFile(string $path): void
     {
-        if ($delete) {
-            Storage::disk($directory)->assertMissing($fileName);
-        } else {
-            if (is_array($fileName)) {
-                foreach ($fileName as $fn) {
-                    Storage::disk($directory)->exists($fn);
-                    Storage::delete("$directory/$fn");
-                }
-            } else {
-                Storage::disk($directory)->exists($fileName);
-                Storage::delete("$directory/$fileName");
-            }
-        }
+        Storage::disk('public')->delete($path);
     }
 }

@@ -1,7 +1,7 @@
 <x-guest-layout>
-    <x-slot:title>
-        {{ config('app.name', 'Laravel') }} - {{ __('Verify Email Page') }}
-    </x-slot:title>
+    <x-slot name="title">
+        {{ config('app.name', 'Laravel') }} - {{ __('Login Page') }}
+    </x-slot>
 
     <div class="py-2 mb-3 text-sm text-white md:text-2xl">
         {{ __('Verification Email Address') }}
@@ -11,7 +11,8 @@
     <x-auth-session-status :status="session('status')" />
 
     <div class="mb-4 text-xs text-slate-400 md:text-lg">
-        {{ __("Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.") }}
+        {{ __("Thanks for signing up! Before getting started, could you verify your email address by clicking on the
+        link we just emailed to you? If you didn't receive the email, we will gladly send you another.") }}
     </div>
 
     <div class="w-full mt-4 text-center md:flex md:justify-between md:mt-5">

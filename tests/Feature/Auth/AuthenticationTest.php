@@ -34,7 +34,7 @@ class AuthenticationTest extends TestCase
         $res = $this->get(route('login'));
 
         $res->assertOk()
-            ->assertSeeText(trans('Login'));
+            ->assertSee(trans('Login'));
     }
 
     /** @test */
@@ -66,7 +66,7 @@ class AuthenticationTest extends TestCase
             ->get(route('dashboard'));
 
         $res->assertOk()
-            ->assertSeeText(trans('Dashboard'));
+            ->assertSee(trans('Dashboard'));
         $this->assertAuthenticated();
     }
 }
