@@ -1,5 +1,5 @@
 <div>
-    <div class="fixed w-full p-6 text-right bg-white border-b border-gray-200 sm:fixed sm:top-0 sm:right-0">
+    <div class="fixed z-50 w-full p-6 text-right bg-white border-b border-gray-200 sm:fixed sm:top-0 sm:right-0">
         <div class="container flex justify-between px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <a href="{{ route('home') }}">
                 <span class="font-serif text-bold font-weight-bold">Jersey Avenue</span>

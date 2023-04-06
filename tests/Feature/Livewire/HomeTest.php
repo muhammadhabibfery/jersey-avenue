@@ -7,7 +7,6 @@ use App\Models\Jersey;
 use App\Models\League;
 use Database\Seeders\JerseySeeder;
 use Database\Seeders\LeagueSeeder;
-// use Livewire\Livewire;
 use Tests\TestCase;
 
 class HomeTest extends TestCase

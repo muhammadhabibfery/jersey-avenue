@@ -4,9 +4,9 @@
     </x-slot>
 
     <x-slot name="header">
-        <h1 class="text-lg font-semibold leading-tight text-gray-800 sm:text-lg md:text-2xl">
+        <x-text-header class="mt-[73px] cursor-default">
             {{ __('Profile') }}
-        </h1>
+        </x-text-header>
     </x-slot>
 
     <div class="py-12">

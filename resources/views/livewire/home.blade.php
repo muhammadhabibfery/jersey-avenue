@@ -59,7 +59,7 @@
                         <h4 class="font-bold uppercase">{{ $topJersey->name }}</h4>
                         <p>{{ currencyFormat($topJersey->price) }}</p>
                         <x-primary-link href="{{ route('jersey.detail', $topJersey) }}"
-                            class=" w-full justify-center mt-1 text-sm text-white bg-gray-700 rounded-md">
+                            class="justify-center w-full mt-1 text-sm text-white bg-gray-700 rounded-md ">
                             {{ __('Detail') }}
                         </x-primary-link>
                     </div>
