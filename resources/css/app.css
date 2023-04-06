@@ -21,3 +21,8 @@
     background-size: cover;
     background-position: left;
 }
+.bg-home {
+    background-image: url("https://getwallpapers.com/wallpaper/full/5/7/2/1047579-vertical-soccer-wallpaper-1920x1200.jpg");
+    background-size: cover;
+    /* background-position: top; */
+}

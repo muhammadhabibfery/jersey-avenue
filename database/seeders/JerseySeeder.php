@@ -14,6 +14,7 @@ class JerseySeeder extends Seeder
     public function run(): void
     {
         $livHome = Jersey::factory()->create([
+            'league_id' => 1,
             'name' => 'FC Liverpool 2022-2023 Home Jersey',
             'slug' => 'fc-liverpool-2022-2023-home-jersey',
             'type' => 'Original',
@@ -24,6 +25,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $livAway = Jersey::factory()->create([
+            'league_id' => 1,
             'name' => 'FC Liverpool 2022-2023 Away Jersey',
             'slug' => 'fc-liverpool-2022-2023-away-jersey',
             'type' => 'Original',
@@ -35,6 +37,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $manCityHome = Jersey::factory()->create([
+            'league_id' => 1,
             'name' => 'Manchester City 2022-2023 Home Jersey',
             'slug' => 'manchester-city-2022-2023-home-jersey',
             'type' => 'Original',
@@ -45,6 +48,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $manCityAway = Jersey::factory()->create([
+            'league_id' => 1,
             'name' => 'Manchester City 2022-2023 Away Jersey',
             'slug' => 'manchester-city-2022-2023-away-jersey',
             'type' => 'Original',
@@ -56,6 +60,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $arsenalHome = Jersey::factory()->create([
+            'league_id' => 1,
             'name' => 'Arsenal 2022-2023 Home Jersey',
             'slug' => 'arsenal-2022-2023-home-jersey',
             'type' => 'Original',
@@ -66,6 +71,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $arsenalAway = Jersey::factory()->create([
+            'league_id' => 1,
             'name' => 'Arsenal 2022-2023 Away Jersey',
             'slug' => 'arsenal-2022-2023-away-jersey',
             'type' => 'Original',
@@ -77,6 +83,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $barcaHome = Jersey::factory()->create([
+            'league_id' => 2,
             'name' => 'FC Barcelona 2022-2023 Home Jersey',
             'slug' => 'fc-barcelona-2022-2023-home-jersey',
             'type' => 'Original',
@@ -87,6 +94,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $barcaAway = Jersey::factory()->create([
+            'league_id' => 2,
             'name' => 'FC Barcelona 2022-2023 Away Jersey',
             'slug' => 'fc-barcelona-2022-2023-away-jersey',
             'type' => 'Original',
@@ -98,6 +106,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $madridHome = Jersey::factory()->create([
+            'league_id' => 2,
             'name' => 'Real Madrid 2022-2023 Home Jersey',
             'slug' => 'real-madrid-2022-2023-home-jersey',
             'type' => 'Original',
@@ -108,6 +117,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $madridAway = Jersey::factory()->create([
+            'league_id' => 2,
             'name' => 'Real Madrid 2022-2023 Away Jersey',
             'slug' => 'real-madrid-2022-2023-away-jersey',
             'type' => 'Original',
@@ -119,6 +129,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $juveHome = Jersey::factory()->create([
+            'league_id' => 3,
             'name' => 'Juventus 2022-2023 Home Jersey',
             'slug' => 'juventus-2022-2023-home-jersey',
             'type' => 'Original',
@@ -129,6 +140,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $juveAway = Jersey::factory()->create([
+            'league_id' => 3,
             'name' => 'Juventus 2022-2023 Away Jersey',
             'slug' => 'juventus-2022-2023-away-jersey',
             'type' => 'Original',
@@ -140,6 +152,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $acMilanHome = Jersey::factory()->create([
+            'league_id' => 3,
             'name' => 'AC Milan 2022-2023 Home Jersey',
             'slug' => 'ac-milan-2022-2023-home-jersey',
             'type' => 'Original',
@@ -150,6 +163,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $acMilanAway = Jersey::factory()->create([
+            'league_id' => 3,
             'name' => 'AC Milan 2022-2023 Away Jersey',
             'slug' => 'ac-milan-2022-2023-away-jersey',
             'type' => 'Original',
@@ -161,6 +175,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $munichHome = Jersey::factory()->create([
+            'league_id' => 4,
             'name' => 'FC Bayern Munich 2022-2023 Home Jersey',
             'slug' => 'fc-bayern-munich-2022-2023-home-jersey',
             'type' => 'Original',
@@ -171,6 +186,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $munichAway = Jersey::factory()->create([
+            'league_id' => 4,
             'name' => 'FC Bayern Munich 2022-2023 Away Jersey',
             'slug' => 'fc-bayern-munich-2022-2023-away-jersey',
             'type' => 'Original',
@@ -182,6 +198,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $dortmundHome = Jersey::factory()->create([
+            'league_id' => 4,
             'name' => 'Borussia Dortmund 2022-2023 Home Jersey',
             'slug' => 'borussia-dortmund-2022-2023-home-jersey',
             'type' => 'Original',
@@ -192,6 +209,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $dortmundAway = Jersey::factory()->create([
+            'league_id' => 4,
             'name' => 'Borussia Dortmund 2022-2023 Away Jersey',
             'slug' => 'borussia-dortmund-2022-2023-away-jersey',
             'type' => 'Original',
@@ -203,6 +221,7 @@ class JerseySeeder extends Seeder
         ]);
 
         $psgHome = Jersey::factory()->create([
+            'league_id' => 5,
             'name' => 'PSG 2022-2023 Home Jersey',
             'slug' => 'psg-2022-2023-home-jersey',
             'type' => 'Original',
@@ -213,6 +232,7 @@ class JerseySeeder extends Seeder
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
         $psgAway = Jersey::factory()->create([
+            'league_id' => 5,
             'name' => 'PSG 2022-2023 Away Jersey',
             'slug' => 'psg-2022-2023-away-jersey',
             'type' => 'Original',

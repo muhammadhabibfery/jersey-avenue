@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -41,5 +42,32 @@ class Jersey extends Model
         return $this->belongsToMany(Order::class)
             ->withPivot(['quantity', 'total_price', 'nameset'])
             ->withTimestamps();
+    }
+
+    /**
+     * get the jerseys's image with custom directory path.
+     */
+    public function getImage(): string
+    {
+        return file_exists(public_path("assets/images/jerseys/{$this->image}"))
+            ? asset("assets/images/jerseys/{$this->image}")
+            : asset("storage/jerseys/{$this->image}");
+    }
+
+    /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
+    /**
+     * Retrieve the model for a bound value.
+     */
+    public function resolveRouteBinding($value, $field = null): Model|ModelNotFoundException
+    {
+        return $this->where($this->getRouteKeyName(), $value)
+            ->firstOrFail();
     }
 }

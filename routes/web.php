@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Livewire\Home;
+use App\Http\Livewire\Jersey;
+use App\Http\Livewire\League;
+use App\Http\Livewire\JerseyDetail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', Home::class)
+    ->name('home');
+Route::get('/leagues', League::class)
+    ->name('league');
+Route::get('/jerseys', Jersey::class)
+    ->name('jersey');
+Route::get('/jersey/{jersey}', JerseyDetail::class)
+    ->name('jersey.detail');
 
 Route::middleware('auth')->group(function () {
     Route::view('/dashboard', 'dashboard')

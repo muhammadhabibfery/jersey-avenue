@@ -19,13 +19,20 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     @livewireScripts
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js"
+        data-turbolinks-eval="false" data-turbo-eval="false"></script>
     @stack('scripts')
 
 </head>
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+        @auth
+        <livewire:navbar-auth />
+        @endauth
+        @guest
+        @include('layouts.navbar-guest')
+        @endguest
 
         <!-- Page Heading -->
         @if (isset($header))
@@ -40,6 +47,8 @@
         <main>
             {{ $slot }}
         </main>
+
+        @include('layouts.footer')
     </div>
 </body>
 

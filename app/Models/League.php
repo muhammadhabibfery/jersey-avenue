@@ -17,4 +17,14 @@ class League extends Model
     {
         return $this->hasMany(Jersey::class);
     }
+
+    /**
+     * get the league's image with custom directory path.
+     */
+    public function getImage(): string
+    {
+        return file_exists(public_path("assets/images/leagues/{$this->image}"))
+            ? asset("assets/images/leagues/{$this->image}")
+            : asset("storage/leagues/{$this->image}");
+    }
 }

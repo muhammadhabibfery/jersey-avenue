@@ -148,7 +148,7 @@ class Profile extends Component implements HasForms
         $data = $this->mutateFormDataBeforeSave($this->form->getState());
 
         $this->user->update($data);
-        $redirectRoute = to_route('dashboard');
+        $redirectRoute = to_route('home');
 
         if ($this->user->wasChanged()) {
             $status = isset($data['password'])

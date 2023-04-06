@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        {{ config('app.name', 'Laravel') }} - {{ __('Register Page') }}
+        {{ config('app.name', 'Laravel') }} - {{ __('Dasboard Page') }}
     </x-slot>
 
     <x-slot name="header">
@@ -12,9 +12,6 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <!-- Session Status -->
-            <x-auth-session-status :status="session('status')" class="mb-6" />
-
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}

@@ -29,6 +29,7 @@ class JerseyFactory extends Factory
             'price_nameset' => 50000,
             'image' => fake()->word(),
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4],
+            'sold' => rand(0, 20),
             'created_by' => 1
         ];
     }

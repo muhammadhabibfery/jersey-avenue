@@ -22,6 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('price_nameset');
             $table->string('image', 100);
             $table->string('stock', 255);
+            $table->unsignedBigInteger('sold')->default(0);
             $table->unsignedInteger('created_by');
             $table->unsignedInteger('updated_by')->nullable();
             $table->unsignedInteger('deleted_by')->nullable();

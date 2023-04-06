@@ -75,7 +75,7 @@ class ProfileTest extends TestCase
             ->fillForm($data)
             ->call('save')
             ->assertHasNoFormErrors()
-            ->assertRedirect(route('dashboard'));
+            ->assertRedirect(route('home'));
 
         $this->assertDatabaseHas(User::class, Arr::only($data, ['username', 'email', 'phone']));
     }
@@ -92,7 +92,7 @@ class ProfileTest extends TestCase
             ->fillForm($data)
             ->call('save')
             ->assertHasNoFormErrors()
-            ->assertRedirect(route('dashboard'));
+            ->assertRedirect(route('home'));
 
         $image = $res->json()->payload['serverMemo']['data']['avatar'][0];
         $this->assertDatabaseHas(User::class, ['avatar' => $image]);
@@ -114,7 +114,7 @@ class ProfileTest extends TestCase
             ->fillForm($data)
             ->call('save')
             ->assertHasNoFormErrors()
-            ->assertRedirect(route('dashboard'));
+            ->assertRedirect(route('home'));
         $this->assertTrue(Hash::check($newPassword, $this->userCustomer->fresh()->getAuthPassword()));
     }
 }
