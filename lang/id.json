@@ -38,8 +38,17 @@
     "See all": "Lihat semua",
     "League Page": "Halaman liga",
     "List of leagues": "Daftar liga",
-    "List of :league jerseys": "Daftar jersey :league",
     "all leagues": "semua liga",
+    "Search leagues ...": "Cari liga ...",
+    "Jersey Page": "Halaman jersey",
+    "League not available": "Liga tidak tersedia",
+    "List of :league jerseys": "Daftar jersey :league",
     "Search jerseys ...": "Cari jersey ...",
-    "League not available": "Liga tidak tersedia"
+    "Jersey not available": "Jersey tidak tersedia",
+    "Showing": "Menampilkan",
+    "to": "sampai",
+    "of": "dari",
+    "results": "hasil",
+    "Jersey Detail Page": "Halaman detail jersey",
+    ":club jersey details": "Detail jersey :club"
 }

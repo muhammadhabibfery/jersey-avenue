@@ -78,7 +78,7 @@ class JerseySeeder extends Seeder
             'weight' => 500,
             'price' => 750000,
             'price_nameset' => 50000,
-            'image' => 'arsenal 22-23 away.png',
+            'image' => 'arsenal 22-23 away.jpg',
             'stock' => ['S' => 0, 'M' => 2, 'L' => 3, 'XL' => 4]
         ]);
 

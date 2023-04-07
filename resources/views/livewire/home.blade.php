@@ -31,7 +31,7 @@
             </div>
             <div class="w-full mt-4 md:flex md:gap-5 md:justify-center">
                 @foreach ($topLeagues as $topLeague)
-                <a href="{{ route('jersey', ['slug' => $topLeague->slug]) }}"
+                <a href="{{ route('jersey', ['name' => $topLeague->slug]) }}"
                     class="flex justify-center items-center border-2 border-slate-400 rounded-md p-7 overflow-y-hidden h-[280px] mb-3 md:w-1/4 md:max-w-[287px]">
                     <img src="{{ $topLeague->getImage() }}" alt="{{ $topLeague->name }}" class="object-cover">
                 </a>

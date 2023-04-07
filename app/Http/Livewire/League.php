@@ -12,7 +12,7 @@ class League extends Component
 
     public string $name = '';
 
-    public static int $paginationCount = 1;
+    public static int $paginationCount = 12;
 
     public function updatingName()
     {

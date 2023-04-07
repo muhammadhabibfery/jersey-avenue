@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Livewire;
 
-use App\Http\Livewire\Jersey;
 use App\Http\Livewire\League;
 use Database\Seeders\LeagueSeeder;
 use Livewire\Livewire;
@@ -85,7 +84,7 @@ class LeagueTest extends TestCase
         $league = LeagueModel::where('slug', $queryString)
             ->first();
 
-        $res = $this->get(route('jersey', ['slug' => $league->slug]));
+        $res = $this->get(route('jersey', ['name' => $league->slug]));
 
         $res->assertSee(trans('List of :league jerseys', ['league' => $league->name]));
     }

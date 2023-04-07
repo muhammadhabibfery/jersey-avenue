@@ -12,7 +12,7 @@
     <section class="container min-h-screen py-12 mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
         <div class="box-content px-4">
             <div class="md:flex md:justify-end">
-                <x-text-input class="block w-full md:w-1/3" type="text" placeholder="{{ __('Search jerseys ...') }}"
+                <x-text-input class="block w-full md:w-1/3" type="text" placeholder="{{ __('Search leagues ...') }}"
                     wire:model.debounce.500ms="name" />
             </div>
 

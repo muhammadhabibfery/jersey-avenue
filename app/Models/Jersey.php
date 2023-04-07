@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -63,11 +63,10 @@ class Jersey extends Model
     }
 
     /**
-     * Retrieve the model for a bound value.
+     * Scope a query to only include jersey where has league.
      */
-    public function resolveRouteBinding($value, $field = null): Model|ModelNotFoundException
+    public function scopeHasLeague(Builder $query, ?string $slug = null): void
     {
-        return $this->where($this->getRouteKeyName(), $value)
-            ->firstOrFail();
+        $query->whereHas('league', fn (Builder $query): Builder => $query->where('slug', $slug));
     }
 }
