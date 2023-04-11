@@ -14,7 +14,7 @@ class Home extends Component
     public function mount(): void
     {
         $this->topLeagues = $this->getTopLeagues();
-        $this->topJerseys = $this->getTopJerseys(4);
+        $this->topJerseys = $this->getTopJerseys(Jersey::$topCount);
     }
 
     public function render()
@@ -30,7 +30,7 @@ class Home extends Component
 
     private function getTopJerseys(int $count): Collection
     {
-        return Jersey::where('sold', '>=', $count)
+        return Jersey::bestSeller()
             ->orderBy('sold', 'desc')
             ->limit(4)
             ->get();

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Support\Str;
 
@@ -62,4 +63,12 @@ function integerFormat(string $value): int
 function generateInvoiceNumber(): string
 {
     return 'JERSEY-AVENUE-' . date('djy') . Str::random(10);
+}
+
+function getOrderCart(): ?Order
+{
+    return auth()->user()
+        ->orders()
+        ->where('status', Order::$status[0])
+        ->first();
 }

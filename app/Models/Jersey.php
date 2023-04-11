@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Jersey extends Model
@@ -16,6 +16,11 @@ class Jersey extends Model
      * The attributes of sizes.
      */
     public static $sizes = ['S', 'M', 'L', 'XL'];
+
+    /**
+     * The attributes of sizes.
+     */
+    public static $topCount = 4;
 
     /**
      * The attributes that should be cast.
@@ -68,5 +73,13 @@ class Jersey extends Model
     public function scopeHasLeague(Builder $query, ?string $slug = null): void
     {
         $query->whereHas('league', fn (Builder $query): Builder => $query->where('slug', $slug));
+    }
+
+    /**
+     * Scope a query best seller jersey.
+     */
+    public function scopeBestSeller(Builder $query): void
+    {
+        $query->where('sold', '>=', self::$topCount);
     }
 }

@@ -63,7 +63,7 @@ class HomeTest extends TestCase
     {
         $this->seed(LeagueSeeder::class);
         $this->seed(JerseySeeder::class);
-        $top4Jerseys = Jersey::where('sold', '>=', 4)
+        $top4Jerseys = Jersey::bestSeller()
             ->orderBy('sold', 'desc')
             ->limit(4)
             ->get()

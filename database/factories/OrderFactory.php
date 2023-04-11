@@ -22,7 +22,7 @@ class OrderFactory extends Factory
             'user_id' => User::factory(),
             'invoice_number' => generateInvoiceNumber(),
             'total_price' => 1000000,
-            'courier_services' => fake()->words(5, true),
+            'courier_services' => null,
             'status' => fake()->randomElement(Order::$status)
         ];
     }

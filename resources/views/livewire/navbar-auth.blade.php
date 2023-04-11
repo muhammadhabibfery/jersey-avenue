@@ -12,18 +12,31 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('jersey')" :active="request()->routeIs('jersey')">
+                        {{ __('Jerseys') }}
                     </x-nav-link>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <x-nav-link :href="route('cart')" :active="request()->routeIs('cart')" class="pb-1 relative">
+                    <span class="md:text-lg absolute right-3">🛒</span>
+                    @if ($cartCount > 0)
+                    <span
+                        class="text-slate-500 rounded-full border border-teal-200 p-1 bg-slate-100 absolute -top-5 right-1 shadow-md">{{
+                        $cartCount }}</span>
+                    @endif
+                </x-nav-link>
+
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
@@ -60,7 +73,16 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="flex items-center -mr-2 sm:hidden">
+            <div class="flex items-center -mr-2 sm:hidden gap-x-2">
+                <x-nav-link :href="route('cart')" :active="request()->routeIs('cart')" class="pb-1 relative">
+                    <span class="md:text-lg absolute right-3">🛒</span>
+                    @if ($cartCount > 0)
+                    <span
+                        class="text-slate-500 rounded-full border border-teal-200 p-1 bg-slate-100 absolute -top-5 right-1 shadow-md">{{
+                        $cartCount }}</span>
+                    @endif
+                </x-nav-link>
+
                 <button @click="open = ! open"
                     class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
                     <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -83,6 +105,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('jersey')" :active="request()->routeIs('jersey')">
+                {{ __('Jerseys') }}
             </x-responsive-nav-link>
 
             <div class="mt-3 space-y-1">

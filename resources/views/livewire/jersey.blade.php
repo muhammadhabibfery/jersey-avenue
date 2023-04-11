@@ -13,7 +13,7 @@
         <div class="box-content px-4">
             <div class="md:flex md:gap-4 md:justify-end">
                 <select wire:model="leagueSelected" class="w-full mb-3 md:w-1/4 md:mb-0 border-gray-300 focus:border-indigo-500
-focus:ring-indigo-500 rounded-md shadow-sm'">
+focus:ring-indigo-500 rounded-md shadow-sm">
                     <option value="" {{ $leagueSelected ? 'disabled' : '' }}>{{ __('Choose league') }}</option>
                     <option value="">{{ __('all leagues') }}</option>
                     @foreach ($allLeagues as $slug => $name)

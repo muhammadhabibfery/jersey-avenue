@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Cart;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Jersey;
 use App\Http\Livewire\League;
@@ -26,13 +27,19 @@ Route::get('/jerseys', Jersey::class)
 Route::get('/jersey/{jersey}', JerseyDetail::class)
     ->name('jersey.detail');
 
-Route::middleware('auth')->group(function () {
-    Route::view('/dashboard', 'dashboard')
-        ->middleware('verified')
-        ->name('dashboard');
+Route::middleware('auth')
+    ->group(function () {
+        Route::view('/profile', 'profile.edit')
+            ->name('profile.edit');
 
-    Route::view('/profile', 'profile.edit')
-        ->name('profile.edit');
-});
+        Route::middleware('verified')
+            ->group(function () {
+                Route::view('/dashboard', 'dashboard')
+                    ->name('dashboard');
+
+                Route::get('/cart', Cart::class)
+                    ->name('cart');
+            });
+    });
 
 require __DIR__ . '/auth.php';

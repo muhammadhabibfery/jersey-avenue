@@ -36,8 +36,8 @@ class AuthenticatedSessionController extends Controller
         // if (checkRole(User::$roles[1], $request->user()->role))
         //     return to_route('filament.pages.dashboard');
 
-        return session()->has('cart')
-            ? to_route(session()->pull('cart'))
+        return session()->has('cartRoute')
+            ? redirect(session()->pull('cartRoute'))
             : redirect()->intended(RouteServiceProvider::HOME);
     }
 

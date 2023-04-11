@@ -2,7 +2,10 @@
 
 namespace Tests\Feature\Auth;
 
+use App\Models\Jersey;
 use App\Models\User;
+use Database\Seeders\JerseySeeder;
+use Database\Seeders\LeagueSeeder;
 use Tests\TestCase;
 use Tests\Validation\AuthenticationValidationTest;
 
@@ -67,6 +70,24 @@ class AuthenticationTest extends TestCase
 
         $res->assertOk()
             ->assertSee(trans('Dashboard'));
+        $this->assertAuthenticated();
+    }
+
+    /** @test */
+    public function if_there_is_cart_route_session_then_should_redirect_to_jersey_detail_page(): void
+    {
+        $this->seed(LeagueSeeder::class);
+        $this->seed(JerseySeeder::class);
+        $jersey = Jersey::bestSeller()
+            ->inRandomOrder()
+            ->first();
+        $sessionData = route('jersey.detail', $jersey);
+        $credentials = ['username' => $this->data['username'], 'password' => $this->realPassword];
+
+        $res = $this->withSession(['cartRoute' => $sessionData])
+            ->post(route('login'), $credentials);
+
+        $res->assertRedirect($sessionData);
         $this->assertAuthenticated();
     }
 }

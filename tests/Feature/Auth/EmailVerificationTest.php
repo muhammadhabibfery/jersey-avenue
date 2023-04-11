@@ -2,12 +2,15 @@
 
 namespace Tests\Feature\Auth;
 
+use Tests\TestCase;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
+use App\Models\Jersey;
+use Database\Seeders\JerseySeeder;
+use Database\Seeders\LeagueSeeder;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\URL;
-use Tests\TestCase;
+use App\Providers\RouteServiceProvider;
 use Tests\Validation\EmailVerificationValidationTest;
 
 class EmailVerificationTest extends TestCase
@@ -68,6 +71,28 @@ class EmailVerificationTest extends TestCase
 
         $res->assertOk()
             ->assertSee(trans('Dashboard'));
+    }
+
+    /** @test */
+    public function if_there_is_cart_route_session_then_should_redirect_to_jersey_detail_page_after_verify_email(): void
+    {
+        Event::fake();
+        $user = $this->userNotVerified;
+        $this->seed(LeagueSeeder::class);
+        $this->seed(JerseySeeder::class);
+        $jersey = Jersey::bestSeller()
+            ->inRandomOrder()
+            ->first();
+        $sessionData = route('jersey.detail', $jersey);
+
+        $res = $this->actingAs($user)
+            ->withSession(['cartRoute' => $sessionData])
+            ->get($this->getVerificationUrl($user->id, $user->email));
+
+        $res->assertRedirect($sessionData)
+            ->assertSessionHas('status');
+        $this->assertTrue($user->fresh()->hasVerifiedEmail());
+        Event::assertDispatched(Verified::class);
     }
 
     private function verifyData(int $id, string $email): array

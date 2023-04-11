@@ -14,7 +14,7 @@ class VerifyEmailController extends Controller
      */
     public function __invoke(EmailVerificationRequest $request): RedirectResponse
     {
-        $route = 'login';
+        $route = route('login');
 
         if ($request->user()->hasVerifiedEmail())
             return EmailVerificationPromptController::redirect();
@@ -23,13 +23,16 @@ class VerifyEmailController extends Controller
             event(new Verified($request->user()));
 
         if (auth()->check()) {
-            $route = session()->has('cart') ? session()->pull('cart') : 'home';
+            $route = session()->has('cartRoute')
+                ? session()->pull('cartRoute')
+                : route('home');
+
             $paragraph = null;
         } else {
             $paragraph = trans('verification.verified-login');
         }
 
-        return to_route($route)->with(
+        return redirect($route)->with(
             'status',
             [
                 'title' => trans('verification.verified'),
