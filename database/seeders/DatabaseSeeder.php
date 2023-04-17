@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             $user[strtolower($role)] = User::factory()->create(['role' => $role]);
 
         $this->call([
+            RegionSeeder::class,
             LeagueSeeder::class,
             JerseySeeder::class
         ]);

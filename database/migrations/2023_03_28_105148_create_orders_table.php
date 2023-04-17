@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Order;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,10 +18,7 @@ return new class extends Migration
             $table->string('invoice_number', 30)->unique()->index();
             $table->unsignedBigInteger('total_price');
             $table->string('courier_services', 200)->nullable();
-            $table->enum(
-                'status',
-                ['IN CART', 'PENDING', 'SUCCESS', 'FAILED']
-            )->index();
+            $table->enum('status', Order::$status)->index();
             $table->timestamps();
         });
     }

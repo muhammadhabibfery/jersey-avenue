@@ -17,6 +17,15 @@ class Order extends Model
     public static $status = ['IN CART', 'PENDING', 'SUCCESS', 'FAILED'];
 
     /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'courier_services' => 'array',
+    ];
+
+    /**
      * Get the user that owns the order
      */
     public function user(): BelongsTo
@@ -30,7 +39,15 @@ class Order extends Model
     public function jerseys(): BelongsToMany
     {
         return $this->belongsToMany(Jersey::class)
-            ->withPivot(['quantity', 'total_price', 'nameset'])
+            ->withPivot(['id', 'size', 'quantity', 'total_price', 'nameset'])
             ->withTimestamps();
+    }
+
+    /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'invoice_number';
     }
 }

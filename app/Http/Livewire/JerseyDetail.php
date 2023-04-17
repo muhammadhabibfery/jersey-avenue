@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Jersey;
-use App\Models\Order;
 use Closure;
-use Illuminate\Validation\Rule;
-use Illuminate\Validation\ValidationException;
+use App\Models\Order;
+use App\Models\Jersey;
 use Livewire\Component;
 use Livewire\Redirector;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Translation\PotentiallyTranslatedString;
 
 class JerseyDetail extends Component
 {
@@ -42,7 +43,7 @@ class JerseyDetail extends Component
             'quantity' => [
                 'numeric',
                 'gte:1',
-                function (string $attribute, string $value, Closure $fail) {
+                function (string $attribute, string $value, Closure $fail): ?PotentiallyTranslatedString {
                     if (isset($this->size)) {
                         foreach ($this->jersey->stock as $key => $stock) {
                             if ($this->size === $key) {
@@ -51,13 +52,14 @@ class JerseyDetail extends Component
                             }
                         }
                     }
+                    return null;
                 }
             ],
             'size' => ['string', Rule::in(Jersey::$sizes)]
         ];
     }
 
-    public function updated($propertyName)
+    public function updated(string $propertyName): void
     {
         if ($propertyName === 'quantity' || $propertyName === 'size') {
             $this->$propertyName = ltrim($this->$propertyName);
@@ -200,7 +202,7 @@ class JerseyDetail extends Component
 
     private function addJerseyOrder(Order $order, int $totalPrice, array $nameset): int
     {
-        $data = ['quantity' => $this->quantity, 'total_price' => $totalPrice];
+        $data = ['size' => $this->size, 'quantity' => $this->quantity, 'total_price' => $totalPrice];
 
         if (count($nameset) > 0)
             $data = array_merge($data, ['nameset' => json_encode($nameset)]);

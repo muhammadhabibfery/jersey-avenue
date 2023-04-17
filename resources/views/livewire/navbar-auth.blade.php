@@ -28,11 +28,11 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-nav-link :href="route('cart')" :active="request()->routeIs('cart')" class="pb-1 relative">
-                    <span class="md:text-lg absolute right-3">🛒</span>
+                <x-nav-link :href="route('cart')" :active="request()->routeIs('cart')" class="relative pb-1">
+                    <span class="absolute md:text-lg right-3">🛒</span>
                     @if ($cartCount > 0)
                     <span
-                        class="text-slate-500 rounded-full border border-teal-200 p-1 bg-slate-100 absolute -top-5 right-1 shadow-md">{{
+                        class="absolute p-1 border border-teal-200 rounded-full shadow-md text-slate-500 bg-slate-100 -top-5 right-1">{{
                         $cartCount }}</span>
                     @endif
                 </x-nav-link>
@@ -74,11 +74,11 @@
 
             <!-- Hamburger -->
             <div class="flex items-center -mr-2 sm:hidden gap-x-2">
-                <x-nav-link :href="route('cart')" :active="request()->routeIs('cart')" class="pb-1 relative">
-                    <span class="md:text-lg absolute right-3">🛒</span>
+                <x-nav-link :href="route('cart')" :active="request()->routeIs('cart')" class="relative pb-1">
+                    <span class="absolute md:text-lg right-3">🛒</span>
                     @if ($cartCount > 0)
                     <span
-                        class="text-slate-500 rounded-full border border-teal-200 p-1 bg-slate-100 absolute -top-5 right-1 shadow-md">{{
+                        class="absolute p-1 border border-teal-200 rounded-full shadow-md text-slate-500 bg-slate-100 -top-5 right-1">{{
                         $cartCount }}</span>
                     @endif
                 </x-nav-link>

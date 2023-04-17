@@ -1,11 +1,7 @@
 <?php
 
-use App\Http\Livewire\Cart;
-use App\Http\Livewire\Home;
-use App\Http\Livewire\Jersey;
-use App\Http\Livewire\League;
-use App\Http\Livewire\JerseyDetail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Home::class)
-    ->name('home');
-Route::get('/leagues', League::class)
-    ->name('league');
-Route::get('/jerseys', Jersey::class)
-    ->name('jersey');
-Route::get('/jersey/{jersey}', JerseyDetail::class)
-    ->name('jersey.detail');
+Route::post('/checkout/payment/notification/', [CheckoutController::class, 'notificationHandler'])
+    ->name('checkout.payment.notification');
 
 Route::middleware('auth')
     ->group(function () {
@@ -35,11 +25,17 @@ Route::middleware('auth')
         Route::middleware('verified')
             ->group(function () {
                 Route::view('/dashboard', 'dashboard')
+                    ->middleware('verified')
                     ->name('dashboard');
 
-                Route::get('/cart', Cart::class)
-                    ->name('cart');
+                Route::get("checkout/payment/finish", [CheckoutController::class, "finish"])->name("checkout.payment.finish");
+                Route::get("checkout/payment/unfinish", [CheckoutController::class, "unfinish"])->name("checkout.payment.unfinish");
+                Route::get("checkout/payment/error", [CheckoutController::class, "error"])->name("checkout.payment.error");
+                Route::get('/checkout/success/', [CheckoutController::class, 'success'])->name('checkout.success');
+                Route::get('/checkout/pending/', [CheckoutController::class, 'pending'])->name('checkout.pending');
+                Route::get('/checkout/failed/', [CheckoutController::class, 'failed'])->name('checkout.failed');
             });
     });
 
-require __DIR__ . '/auth.php';
+$routes = glob(__DIR__ . '/extends/*.php');
+foreach ($routes as $route) require($route);

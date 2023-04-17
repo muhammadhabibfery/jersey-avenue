@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Jersey;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('jersey_id')->constrained()->cascadeOnDelete();
             $table->foreignId('order_id')->constrained()->cascadeOnDelete();
+            $table->enum('size', Jersey::$sizes);
             $table->unsignedInteger('quantity');
             $table->unsignedBigInteger('total_price');
             $table->string('nameset', 255)->default(json_encode([]));

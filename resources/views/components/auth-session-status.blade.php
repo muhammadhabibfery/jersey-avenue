@@ -10,10 +10,18 @@
         </div>
         <div class="text-xs md:text-sm">
             <div>
+                @if (isset($status['cart']))
+                <ul class="list-none">
+                    @foreach ($status['cart'] as $cart)
+                    <li>{{ $cart }}</li>
+                    @endforeach
+                </ul>
+                @else
                 @isset($status['icon'])
                 <span class="mr-2">{{ $status['icon'] }}</span>
                 @endisset
                 <span>{{ $status['paragraph'] }}</span>
+                @endif
             </div>
         </div>
         @else

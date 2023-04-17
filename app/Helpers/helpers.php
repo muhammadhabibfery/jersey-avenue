@@ -65,10 +65,33 @@ function generateInvoiceNumber(): string
     return 'JERSEY-AVENUE-' . date('djy') . Str::random(10);
 }
 
+/**
+ * Get an order with in cart status.
+ */
 function getOrderCart(): ?Order
 {
     return auth()->user()
         ->orders()
         ->where('status', Order::$status[0])
         ->first();
+}
+
+/**
+ * Update jersey stock.
+ */
+function updateJerseyStock(Order $order): array
+{
+    $result = [];
+
+    foreach ($order->jerseys as $jersey) {
+        $newStock = array_merge($jersey->stock, [$jersey->pivot->size =>  $jersey->stock[$jersey->pivot->size] - $jersey->pivot->quantity]);
+
+        $jersey->stock = $newStock;
+        $jersey->sold += $jersey->pivot->quantity;
+        $jersey->save();
+
+        array_push($result, $newStock);
+    }
+
+    return $result;
 }

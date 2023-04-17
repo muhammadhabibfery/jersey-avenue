@@ -45,7 +45,7 @@ class Jersey extends Model
     public function orders(): BelongsToMany
     {
         return $this->belongsToMany(Order::class)
-            ->withPivot(['quantity', 'total_price', 'nameset'])
+            ->withPivot(['id', 'size', 'quantity', 'total_price', 'nameset'])
             ->withTimestamps();
     }
 
