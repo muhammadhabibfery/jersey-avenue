@@ -14,6 +14,8 @@ use App\Http\Controllers\CheckoutController;
 |
 */
 
+Route::get('/admin/login', fn () => to_route('login'))
+    ->name('filament.auth.login');
 Route::post('/checkout/payment/notification/', [CheckoutController::class, 'notificationHandler'])
     ->name('checkout.payment.notification');
 
@@ -24,9 +26,6 @@ Route::middleware('auth')
 
         Route::middleware('verified')
             ->group(function () {
-                Route::view('/dashboard', 'dashboard')
-                    ->name('dashboard');
-
                 Route::get("checkout/payment/finish", [CheckoutController::class, "finish"])->name("checkout.payment.finish");
                 Route::get("checkout/payment/unfinish", [CheckoutController::class, "unfinish"])->name("checkout.payment.unfinish");
                 Route::get("checkout/payment/error", [CheckoutController::class, "error"])->name("checkout.payment.error");

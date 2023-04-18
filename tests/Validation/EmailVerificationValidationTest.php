@@ -31,7 +31,7 @@ trait EmailVerificationValidationTest
         $this->withExceptionHandling();
         $this->actingAs($this->userNotVerified);
 
-        $res = $this->get(route('dashboard'));
+        $res = $this->get(route('cart'));
 
         $res->assertRedirect(route('verification.notice'));
     }

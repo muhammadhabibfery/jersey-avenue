@@ -18,7 +18,7 @@
 
             <div class="box-border mt-5 md:flex md:flex-wrap md:gap-3">
                 @forelse ($leagues as $league)
-                <a href="{{ route('jersey', ['slug' => $league->slug]) }}"
+                <a href="{{ route('jersey', ['name' => $league->slug]) }}"
                     class="box-border py-2 flex items-center justify-center w-full mb-3 overflow-y-hidden border-2 rounded-md border-slate-400 md:w-[23%] md:mb-0 h-[177px] md:h-[200px]">
                     <img src="{{ $league->getImage() }}" alt="{{ $league->name }}"
                         class="md:w-[75%] md:h-[75%] w-[50%]">

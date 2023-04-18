@@ -33,8 +33,8 @@ class AuthenticatedSessionController extends Controller
         if (!$request->user()->hasVerifiedEmail())
             return to_route('verification.notice');
 
-        // if (checkRole(User::$roles[1], $request->user()->role))
-        //     return to_route('filament.pages.dashboard');
+        if (checkRole(User::$roles[1], $request->user()->role) && $request->user()->status === User::$status[0])
+            return to_route('filament.pages.dashboard');
 
         return session()->has('cartRoute')
             ? redirect(session()->pull('cartRoute'))

@@ -67,10 +67,10 @@ class EmailVerificationTest extends TestCase
     public function verified_user_can_access_the_verified_routes(): void
     {
         $res = $this->actingAs($this->userVerified)
-            ->get(route('dashboard'));
+            ->get(route('cart'));
 
         $res->assertOk()
-            ->assertSee(trans('Dashboard'));
+            ->assertSee(trans('Shopping Cart'));
     }
 
     /** @test */

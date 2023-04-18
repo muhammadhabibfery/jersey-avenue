@@ -19,6 +19,22 @@ class League extends Model
     }
 
     /**
+     * Set the league's name.
+     */
+    public function setNameAttribute(string $value): void
+    {
+        $this->attributes['name'] = ucwords($value);
+    }
+
+    /**
+     * Set the league's country.
+     */
+    public function setCountryAttribute(string $value): void
+    {
+        $this->attributes['country'] = ucwords($value);
+    }
+
+    /**
      * get the league's image with custom directory path.
      */
     public function getImage(): string

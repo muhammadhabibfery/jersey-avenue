@@ -66,10 +66,10 @@ class AuthenticationTest extends TestCase
     public function authenticated_user_can_access_the_authenticated_routes(): void
     {
         $res = $this->actingAs($this->user)
-            ->get(route('dashboard'));
+            ->get(route('cart'));
 
         $res->assertOk()
-            ->assertSee(trans('Dashboard'));
+            ->assertSee(trans('Shopping Cart'));
         $this->assertAuthenticated();
     }
 

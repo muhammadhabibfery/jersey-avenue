@@ -110,3 +110,13 @@ function courierServiceFormat(?array $couriers = null): string
 
     return "-";
 }
+
+/**
+ * Set permissions.
+ */
+function setPermissions(string $availableRole, User $user, ?Closure $ability = null): bool
+{
+    return $ability
+        ? $ability() && checkRole($availableRole, $user->role)
+        : checkRole($availableRole, $user->role);
+}

@@ -20,7 +20,7 @@ trait AuthenticationValidationTest
     {
         $this->withExceptionHandling();
 
-        $res = $this->get(route('dashboard'));
+        $res = $this->get(route('cart'));
 
         $res->assertRedirect(route('login'));
         $this->assertGuest();

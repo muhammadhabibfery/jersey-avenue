@@ -98,5 +98,17 @@
     "Order History": "Daftar Order",
     "Your Order History": "Daftar Order Anda",
     "Invoice Number": "Nomor Invoice",
-    "Order details": "Detail order"
+    "Order details": "Detail order",
+    "List of League": "Daftar liga",
+    "Country": "Negara",
+    "Image": "Gambar",
+    "Choose image": "Pilih gambar",
+    "Created by": "Dibuat oleh",
+    "Updated by": "Diubah oleh",
+    "Create league": "Buat liga",
+    "Detail of league": "Detail liga",
+    "League created succesfully": "Liga berhasil dibuat",
+    "Edit league": "Ubah liga",
+    "League updated succesfully": "Liga berhasil diubah",
+    "League deleted succesfully": "Liga berhasil dihapus"
 }

@@ -31,7 +31,9 @@
         <livewire:navbar-auth />
         @endauth
         @guest
+        @if (request()->routeIs('home') || request()->routeIs('jersey'))
         @include('layouts.navbar-guest')
+        @endif
         @endguest
 
         <!-- Page Heading -->
@@ -48,7 +50,9 @@
             {{ $slot }}
         </main>
 
+        @if (auth()->check() || request()->routeIs('home') || request()->routeIs('jersey'))
         @include('layouts.footer')
+        @endif
     </div>
 </body>
 

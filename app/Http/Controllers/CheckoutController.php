@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Traits\MidtransPayment;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class CheckoutController extends Controller
