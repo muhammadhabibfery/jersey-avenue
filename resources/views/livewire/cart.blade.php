@@ -44,7 +44,7 @@
                             <td class="px-3 py-4 whitespace-nowrap">
                                 @if (count(json_decode($jersey->pivot->nameset)) > 0)
                                 <ul class="list-item">
-                                    @foreach (json_decode($jersey->pivot->nameset) as $key => $nameset)
+                                    @foreach (json_decode($jersey->pivot->nameset) as $nameset)
                                     <li>{{ $nameset->name }} {{ $nameset->number }}</li>
                                     @endforeach
                                 </ul>

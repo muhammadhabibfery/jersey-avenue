@@ -16,7 +16,7 @@ class Jersey extends Component
 
     public array $allLeagues;
 
-    public static int $paginationCount = 12;
+    public static int $paginationCount = 32;
 
     public function mount(Request $request): void
     {
@@ -34,6 +34,11 @@ class Jersey extends Component
     }
 
     public function updatingName()
+    {
+        $this->resetPage();
+    }
+
+    public function updatingLeagueSelected()
     {
         $this->resetPage();
     }

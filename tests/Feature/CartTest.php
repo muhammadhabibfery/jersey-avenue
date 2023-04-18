@@ -9,11 +9,9 @@ use App\Models\Jersey;
 use Livewire\Livewire;
 use App\Http\Livewire\Cart;
 use App\Mail\OrderSuccess;
-use App\Services\RajaOngkir;
 use Database\Seeders\JerseySeeder;
 use Database\Seeders\LeagueSeeder;
 use GuzzleHttp\Promise\FulfilledPromise;
-use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\DB;
 use Livewire\Testing\TestableLivewire;
 use Illuminate\Database\Eloquent\Collection;
@@ -70,23 +68,6 @@ class CartTest extends TestCase
             'selectedCity' => 42,
             'selectedCourier' => 'jne',
             'address' => 'jl.in aja',
-            // 'courierCosts' => [
-            //     'code' => 'jne',
-            //     'costs' => [
-            //         [
-            //             "service" => "OKE",
-            //             "description" => "Ongkos Kirim Ekonomis",
-            //             "value" => 38000,
-            //             "etd" => "3-6 Hari",
-            //         ],
-            //         [
-            //             "service" => "REG",
-            //             "description" => "Layanan Reguler",
-            //             "value" => 41000,
-            //             "etd" => "2-3 Hari",
-            //         ]
-            //     ]
-            // ],
             'selectedCourierCost' => 'jne,REG,41000'
         ];
     }

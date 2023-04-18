@@ -25,7 +25,6 @@ Route::middleware('auth')
         Route::middleware('verified')
             ->group(function () {
                 Route::view('/dashboard', 'dashboard')
-                    ->middleware('verified')
                     ->name('dashboard');
 
                 Route::get("checkout/payment/finish", [CheckoutController::class, "finish"])->name("checkout.payment.finish");

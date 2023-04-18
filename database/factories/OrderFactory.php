@@ -20,7 +20,6 @@ class OrderFactory extends Factory
     {
         return [
             'user_id' => rand(1, 10),
-            // 'user_id' => User::factory(),
             'invoice_number' => generateInvoiceNumber(),
             'total_price' => 1000000,
             'courier_services' => null,

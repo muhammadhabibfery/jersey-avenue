@@ -93,5 +93,10 @@
     "The selected :attribute :value cost is not available, please choose another": "Biaya ongkir :attribute :value tidak tersedia, silahkan pilih yang lain",
     "etd": "estimasi",
     "Sucessful order notification": "Notifikasi order success",
-    "We're sorry there is one or several jerseys of your choice that are empty :": "Mohon maaf ada satu atau beberapa jersey pilihan anda yang kosong :"
+    "We're sorry there is one or several jerseys of your choice that are empty :": "Mohon maaf ada satu atau beberapa jersey pilihan anda yang kosong :",
+    "Order History Page": "Halaman Riwayat order",
+    "Order History": "Daftar Order",
+    "Your Order History": "Daftar Order Anda",
+    "Invoice Number": "Nomor Invoice",
+    "Order details": "Detail order"
 }

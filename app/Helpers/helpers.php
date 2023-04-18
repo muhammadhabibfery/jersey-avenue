@@ -95,3 +95,18 @@ function updateJerseyStock(Order $order): array
 
     return $result;
 }
+
+/**
+ * Format courier service from array to string.
+ */
+function courierServiceFormat(?array $couriers = null): string
+{
+    if (is_array($couriers)) {
+        $couriers['code'] = strtoupper($couriers['code']);
+        $couriers['value'] = currencyFormat($couriers['value']);
+
+        return "{$couriers['code']} - {$couriers['service']} {$couriers['description']} {$couriers['value']} Estimasi : {$couriers['etd']}";
+    }
+
+    return "-";
+}

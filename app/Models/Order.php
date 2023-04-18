@@ -43,6 +43,23 @@ class Order extends Model
             ->withTimestamps();
     }
 
+    public function getStatusBadgeAttribute(): string
+    {
+        switch ($this->status) {
+            case 'PENDING':
+                $badge = "px-2 py-1 text-warning-700 bg-warning-200 rounded-lg";
+                break;
+            case 'SUCCESS':
+                $badge = "px-2 py-1 text-success-700 bg-success-200 rounded-lg";
+                break;
+            default:
+                $badge = "px-2 py-1 text-danger-700 bg-danger-200 rounded-lg";
+                break;
+        }
+
+        return $badge;
+    }
+
     /**
      * Get the route key for the model.
      */

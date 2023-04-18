@@ -6,6 +6,7 @@ use App\Http\Livewire\Jersey;
 use App\Http\Livewire\League;
 use App\Http\Livewire\JerseyDetail;
 use App\Http\Livewire\Cart;
+use App\Http\Livewire\OrderHistory;
 
 Route::get('/', Home::class)
     ->name('home');
@@ -20,4 +21,6 @@ Route::middleware(['auth', 'verified'])
     ->group(function () {
         Route::get('/cart', Cart::class)
             ->name('cart');
+        Route::get('/order-history', OrderHistory::class)
+            ->name('order-history');
     });
