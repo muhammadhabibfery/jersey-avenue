@@ -2,7 +2,6 @@
 
 use App\Models\User;
 use App\Models\Order;
-use App\Models\Jersey;
 use Illuminate\Support\Str;
 
 /**
@@ -110,6 +109,27 @@ function courierServiceFormat(?array $couriers = null): string
     }
 
     return "-";
+}
+
+/**
+ * Format display nameset.
+ */
+function namesetFormat(string $nameset): string
+{
+    $state = json_decode($nameset);
+    $result = '';
+    if (count($state) > 0) {
+        foreach ($state as $values) {
+            foreach ($values as $value)
+                $result .= "$value ";
+            $result .= ', ';
+        }
+        $result = rtrim($result, ', ');
+    } else {
+        $result .= '-';
+    }
+
+    return $result;
 }
 
 /**
