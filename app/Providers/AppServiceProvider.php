@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use Carbon\Carbon;
 use Filament\Facades\Filament;
+use Filament\Navigation\UserMenuItem;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use App\Filament\Resources\ProfileResource;
 use Illuminate\Contracts\Support\DeferrableProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -32,14 +34,14 @@ class AppServiceProvider extends ServiceProvider
                 'Staff Management'
             ]);
 
-            // Filament::registerUserMenuItems([
-            //     'account' => UserMenuItem::make()
-            //         ->label(trans('Profile'))
-            //         ->url(ProfileResource::getUrl()),
-            //     'logout' => UserMenuItem::make()
-            //         ->label(trans('Logout'))
-            //         ->url(route('logout'))
-            // ]);
+            Filament::registerUserMenuItems([
+                'account' => UserMenuItem::make()
+                    ->label(trans('Profile'))
+                    ->url(ProfileResource::getUrl()),
+                'logout' => UserMenuItem::make()
+                    ->label(trans('Logout'))
+                    ->url(route('logout'))
+            ]);
         });
     }
 }

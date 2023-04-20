@@ -13,8 +13,7 @@ use Tests\TestCase;
 
 class ProfileTest extends TestCase
 {
-    public User $userCustomer;
-
+    private User $userCustomer;
     public array $data = [
         'username' => 'johnlennon',
         'email' => 'johnlennon@beatles.com',

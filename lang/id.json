@@ -123,5 +123,8 @@
     "Jersey updated succesfully": "Jersey berhasil diubah",
     "Jersey deleted succesfully": "Jersey berhasil dihapus",
     "Jersey restored succesfully": "Jersey berhasil dikembalikan",
-    "Jersey succesfully deleted permanently": "Jersey berhasil dihapus secara permanen"
+    "Jersey succesfully deleted permanently": "Jersey berhasil dihapus secara permanen",
+    "Your profile updated successfully": "Profile anda berhasil diperbarui",
+    "Your profile and password updated successfully": "Profile dan password anda berhasil diperbarui",
+    "Back to dashboard": "Kembali ke dasbor"
 }
