@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Jersey extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     /**
      * The attributes of sizes.
@@ -47,6 +48,22 @@ class Jersey extends Model
         return $this->belongsToMany(Order::class)
             ->withPivot(['id', 'size', 'quantity', 'total_price', 'nameset'])
             ->withTimestamps();
+    }
+
+    /**
+     * Set the jersey's name.
+     */
+    public function setNameAttribute(string $value): void
+    {
+        $this->attributes['name'] = ucwords($value);
+    }
+
+    /**
+     * Set the jersey's type.
+     */
+    public function setTypeAttribute(string $value): void
+    {
+        $this->attributes['type'] = ucwords($value);
     }
 
     /**

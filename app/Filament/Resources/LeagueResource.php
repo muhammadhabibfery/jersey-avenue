@@ -14,6 +14,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
 use Livewire\TemporaryUploadedFile;
 
 class LeagueResource extends Resource
@@ -74,6 +75,7 @@ class LeagueResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
+                    ->before(fn (Model $record) => self::deleteImage($record->image))
                     ->successNotificationTitle(trans('League deleted succesfully')),
             ])
             ->defaultSort('created_at', 'desc');

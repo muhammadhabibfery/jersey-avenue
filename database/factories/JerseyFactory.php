@@ -30,7 +30,9 @@ class JerseyFactory extends Factory
             'image' => fake()->word(),
             'stock' => ['S' => 1, 'M' => 2, 'L' => 3, 'XL' => 4],
             'sold' => rand(0, 20),
-            'created_by' => 1
+            'created_by' => 1,
+            'deleted_by' => null,
+            'deleted_at' => null
         ];
     }
 }

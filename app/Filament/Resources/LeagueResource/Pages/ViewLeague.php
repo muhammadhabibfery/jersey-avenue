@@ -13,7 +13,6 @@ use Filament\Resources\Pages\ViewRecord;
 class ViewLeague extends ViewRecord
 {
     protected static string $resource = LeagueResource::class;
-
     protected static ?string $title = 'Detail of league';
 
     public function getBreadcrumb(): string
@@ -48,9 +47,6 @@ class ViewLeague extends ViewRecord
                     ->label(trans('Image')),
                 TextInput::make('created_by')
                     ->label(trans('Created by'))
-                    ->formatStateUsing(fn (?int $state = null): string => isset($state) ? (User::find($state))->name : ''),
-                TextInput::make('updated_by')
-                    ->label(trans('Updated by'))
                     ->formatStateUsing(fn (?int $state = null): string => isset($state) ? (User::find($state))->name : ''),
             ]);
     }
