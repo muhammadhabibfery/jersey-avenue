@@ -36,8 +36,6 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'created_by' => null,
             'updated_by' => null,
-            'deleted_by' => null,
-            'deleted_at' => null,
         ];
     }
 

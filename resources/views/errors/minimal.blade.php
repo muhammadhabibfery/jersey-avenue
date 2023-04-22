@@ -17,9 +17,24 @@
                     </h3>
                 </div>
 
+                @auth
+                @if (checkRole(\App\Models\User::$roles[1], auth()->user()->role))
+                <x-primary-link href="{{ route('filament.pages.dashboard') }}"
+                    class="mt-6 text-sm text-white bg-gray-700 rounded-md">
+                    {{ __('Back to dashboard') }}
+                </x-primary-link>
+                @else
                 <x-primary-link href="{{ route('home') }}" class="mt-6 text-sm text-white bg-gray-700 rounded-md">
                     {{ __('Back to home') }}
                 </x-primary-link>
+                @endif
+                @endauth
+                @guest
+                <x-primary-link href="{{ route('home') }}" class="mt-6 text-sm text-white bg-gray-700 rounded-md">
+                    {{ __('Back to home') }}
+                </x-primary-link>
+                @endguest
+
             </div>
         </div>
     </div>

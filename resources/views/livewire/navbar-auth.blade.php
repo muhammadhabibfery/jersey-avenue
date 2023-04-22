@@ -12,9 +12,15 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    @if (checkRole(\App\Models\User::$roles[1], auth()->user()->role))
+                    <x-nav-link :href="route('filament.pages.dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+                    @else
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
+                    @endif
 
                     <x-nav-link :href="route('jersey')" :active="request()->routeIs('jersey')">
                         {{ __('Jerseys') }}
@@ -100,9 +106,15 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
+            @if (checkRole(\App\Models\User::$roles[1], auth()->user()->role))
+            <x-responsive-nav-link :href="route('filament.pages.dashboard')">
+                {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            @else
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
+            @endif
             <x-responsive-nav-link :href="route('jersey')" :active="request()->routeIs('jersey')">
                 {{ __('Jerseys') }}
             </x-responsive-nav-link>

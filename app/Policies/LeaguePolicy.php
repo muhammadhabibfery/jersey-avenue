@@ -46,20 +46,4 @@ class LeaguePolicy
     {
         return setPermissions(User::$roles[1], $user, fn (): bool => $user->id == $league->created_by);
     }
-
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, League $league): bool
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, League $league): bool
-    {
-        //
-    }
 }
