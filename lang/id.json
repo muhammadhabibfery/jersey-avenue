@@ -139,5 +139,7 @@
     "Edit user": "Ubah user",
     "User created succesfully": "User berhasil dibuat",
     "User updated succesfully": "User berhasil diubah",
-    "User deleted succesfully": "User berhasil dihapus"
+    "User deleted succesfully": "User berhasil dihapus",
+    "Jerseys count": "Total jersey",
+    "Orders count": "Total order"
 }
