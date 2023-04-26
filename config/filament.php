@@ -183,7 +183,7 @@ return [
 
     'database_notifications' => [
         'enabled' => true,
-        'polling_interval' => '15s',
+        'polling_interval' => null,
     ],
 
     /*
@@ -200,12 +200,17 @@ return [
 
     'broadcasting' => [
 
-        // 'echo' => [
-        //     'broadcaster' => 'pusher',
-        //     'key' => env('VITE_PUSHER_APP_KEY'),
-        //     'cluster' => env('VITE_PUSHER_APP_CLUSTER'),
-        //     'forceTLS' => true,
-        // ],
+        'echo' => [
+            'broadcaster' => 'pusher',
+            'key' => env('VITE_PUSHER_APP_KEY'),
+            'wsHost' => env('VITE_PUSHER_HOST') ?? 'ws-' . env('VITE_PUSHER_APP_CLUSTER') . '.pusher.com',
+            'wsPort' => env('VITE_PUSHER_PORT') ?? 80,
+            'wssPort' => env('VITE_PUSHER_PORT') ?? 443,
+            'encrypted' => true,
+            // 'cluster' => env('VITE_PUSHER_APP_CLUSTER'),
+            'forceTLS' => true,
+            'enabledTransports' => ["ws", "wss"],
+        ],
 
     ],
 

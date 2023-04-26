@@ -8,13 +8,15 @@ use Midtrans\Config;
 use App\Models\Order;
 use Livewire\Redirector;
 use App\Mail\OrderSuccess;
+use App\Models\User;
 use App\Notifications\OrderNotification;
+use Filament\Notifications\Events\DatabaseNotificationsSent;
+use Illuminate\Database\Eloquent\Collection;
 use Midtrans\Notification;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Notification as NotificationFacade;
 use Symfony\Component\HttpFoundation\Response;
 
 trait MidtransPayment
@@ -95,7 +97,7 @@ trait MidtransPayment
         }
 
         $order->save();
-        NotificationFacade::send(getEmployees(), new OrderNotification($order));
+        $this->sendOrderNotification(getEmployees(), $order);
         return  to_route($routeName);
     }
 
@@ -155,5 +157,16 @@ trait MidtransPayment
             ->first();
 
         return $order ?: to_route('home');
+    }
+
+    /**
+     * Send the order notification.
+     */
+    private function sendOrderNotification(Collection $employees, Order $order): void
+    {
+        $employees->each(function (User $employee) use ($order): void {
+            $employee->notify(new OrderNotification($order));
+            event(new DatabaseNotificationsSent($employee));
+        });
     }
 }
