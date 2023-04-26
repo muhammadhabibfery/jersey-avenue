@@ -8,11 +8,13 @@ use Midtrans\Config;
 use App\Models\Order;
 use Livewire\Redirector;
 use App\Mail\OrderSuccess;
+use App\Notifications\OrderNotification;
 use Midtrans\Notification;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Notification as NotificationFacade;
 use Symfony\Component\HttpFoundation\Response;
 
 trait MidtransPayment
@@ -93,6 +95,7 @@ trait MidtransPayment
         }
 
         $order->save();
+        NotificationFacade::send(getEmployees(), new OrderNotification($order));
         return  to_route($routeName);
     }
 

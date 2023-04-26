@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Order;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Str;
 
 /**
@@ -140,4 +141,13 @@ function setPermissions(string $availableRole, User $user, ?Closure $ability = n
     return $ability
         ? $ability() && checkRole($availableRole, $user->role)
         : checkRole($availableRole, $user->role);
+}
+
+/**
+ * Get all employees.
+ */
+function getEmployees(): ?Collection
+{
+    return User::where('role', '!=', User::$roles[2])
+        ->get();
 }

@@ -141,5 +141,10 @@
     "User updated succesfully": "User berhasil diubah",
     "User deleted succesfully": "User berhasil dihapus",
     "Jerseys count": "Total jersey",
-    "Orders count": "Total order"
+    "Orders count": "Total order",
+    "New Order Notification": "Pemberitahuan order baru",
+    "There is a new order with invoice number :invoiceNumber": "Ada order baru dengan nomor invoice :invoiceNumber",
+    "Changes of Order Status Notifcation": "Pemberitahuan perubahan status order",
+    "The status of order with invoice number :invoiceNumber is :status now": "Status order dengan nomor invoice :invoiceNumber adalah :status saat ini",
+    "see": "lihat"
 }

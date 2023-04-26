@@ -1,7 +1,11 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
+use App\Notifications\OrderNotification;
 use App\Http\Controllers\CheckoutController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +18,27 @@ use App\Http\Controllers\CheckoutController;
 |
 */
 
-Route::get('/admin/login', fn () => to_route('login'))
+Route::get('/admin/login', fn (): RedirectResponse => to_route('login'))
     ->name('filament.auth.login');
 Route::post('/checkout/payment/notification/', [CheckoutController::class, 'notificationHandler'])
     ->name('checkout.payment.notification');
+Route::post('/mark-as-read-order-notification', function (Request $request): RedirectResponse {
+    $response = ['code' => 500, 'message' => 'Failed'];
+
+    if ($request->has('message')) {
+        $employees = getEmployees();
+        $employees->each(function (User $employee) use ($request): void {
+            $employee->notifications
+                ->where('type', OrderNotification::class)
+                ->where('data.body', $request->json('message'))
+                ->markAsRead();
+        });
+        $response = ['code' => 200, 'message' => 'Success'];
+    }
+
+    return response()->json($response);
+})
+    ->name('mark-notification');
 
 Route::middleware('auth')
     ->group(function () {
