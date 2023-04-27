@@ -1,66 +1,198 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">
+Jersey Avenue
+</h1>
+
+<h5 align="center">
+Jersey Avenue is a interactive SPA project using TALL Stack (TailwindCSS, AlpineJS, Laravel, Livewire).
+</h5>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="https://github.com/muhammadhabibfery/jersey-avenue/actions/workflows/test.yml">
+        <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/muhammadhabibfery/jersey-avenue/test.yml?logo=github">
+    </a>
+    <a href="https://www.php.net">
+        <img src="https://img.shields.io/badge/php-%3E%3D8.1-%23777BB4" />
+    </a>
+    <a href="https://laravel.com">
+        <img src="https://img.shields.io/badge/laravel-10.x-%23EC4E3D" />
+    </a>
 </p>
 
-## About Laravel
+</br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+| [Frontend Features][] | [Admin Panel Features][] | [Requirements][] | [Install][] | [How to setting][] | [License][] |
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Frontend Features 
+<img src="public/assets/images/front-1.1.png" alt="Preview"/>
+<img src="public/assets/images/front-1.2.png" alt="Preview"/>
+<hr>
+<img src="public/assets/images/front-2.png" alt="Preview"/>
+<hr>
+<img src="public/assets/images/front-3.png" alt="Preview"/>
+<hr>
+<img src="public/assets/images/front-4.png" alt="Preview"/>
+<hr>
+<img src="public/assets/images/front-5.png" alt="Preview"/>
+<hr>
+<img src="public/assets/images/front-6.1.png" alt="Preview"/>
+<img src="public/assets/images/front-6.2.png" alt="Preview"/>
+<hr>
+<img src="public/assets/images/front-7.png" alt="Preview"/>
+<hr>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Features
 
-## Learning Laravel
+- <b> Home
+- <b> List of leagues
+- <b> List of jerseys
+- <b> Jersey Detail
+- <b> Cart
+- <b> Checkout and Payment
+- <b> Order History
+- <b> Change Profile and Password
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Admin Panel Features 
+<img src="public/assets/images/admin-panel.png" alt="Preview"/>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+|<h3>Menu  </h3>        |       Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------------|
+|<b>Dashboard           | </b>Contains information about all menu.                                          |
+|<b>User Management     | </b>Manage customers and employees.                                               |
+|<b>League              | </b>Create and manage leagues.                                                    |
+|<b>Jersey              | </b>Create and manage jerseys.                                                    |
+|<b>Order               | </b>Manage and monitor the transactions.                                          |
+|<b>Profile             | </b>Edit own profile and password.                                                |
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Requirements
 
-## Laravel Sponsors
+    Composer packages:
+	PHP = ^8.1
+    laravel = ^10.x
+    laravel/breeze = ^1.x
+    filament/filament = ^2.x
+    midtrans/midtrans-php = ^2.x
+    pusher/pusher-php-server = ^7.x
+    beyondcode/laravel-websockets = ^1.x
+    barryvdh/laravel-debugbar: ^3.x
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    NPM packages:
+    tailwindcss = ^3.x
+    alpinejs = ^3.x
+    laravel-echo = ^1.x
+    pusher-js = ^8.x
+    turbolinks = ^5.x
 
-### Premium Partners
+## Install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Clone repo
 
-## Contributing
+```
+git clone https://github.com/muhammadhabibfery/jersey-avenue.git
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Install Composer
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+[Download Composer](https://getcomposer.org/download/)
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+composer install/update 
+
+```
+composer install
+```
+
+Install Nodejs
+
+
+[Download Node.js](https://nodejs.org/en/download/)
+
+
+NPM dependencies
+```
+npm install
+```
+
+Run Vite 
+
+```
+npm run dev
+```
+
+## How to setting 
+
+Copy .env.example
+
+```
+cp .env.example .env
+```
+
+Go into .env file change Database and Email credentials. Then setup some configuration with your own credentials
+```
+BROADCAST_DRIVER=pusher
+QUEUE_CONNECTION=database
+
+PUSHER_APP_ID=justRandomString
+PUSHER_APP_KEY=justRandomString
+PUSHER_APP_SECRET=justRandomString
+PUSHER_HOST=127.0.0.1
+PUSHER_PORT=6001
+PUSHER_SCHEME=https|http   (Just choose one)
+PUSHER_APP_CLUSTER=mt1
+
+RAJAONGKIR_API_KEY=<Your-API-Key>
+
+MIDTRANS_SERVER_KEY = <Your-Server-Key>
+MIDTRANS_PRODUCTION = false
+MIDTRANS_SANITIZED = true
+MIDTRANS_3DS = true|false   (Just choose one)
+
+<!-- If you are using laravel valet and https protocol, add your valet path below -->
+LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT='/Users/YOUR-USERNAME/.config/valet/Certificates/VALET-SITE.TLD.crt'
+LARAVEL_WEBSOCKETS_SSL_LOCAL_PK='/Users/YOUR-USERNAME/.config/valet/Certificates/VALET-SITE.TLD.key'
+LARAVEL_WEBSOCKETS_SSL_PASSPHRASE=''
+
+```
+
+Run the migration
+
+```
+php artisan migrate
+```
+
+Or run the migration with seeder if you want seeding the related data
+
+```
+php artisan migrate --seed
+```
+
+Generate a New Application Key
+
+```
+php artisan key:generate
+```
+
+Create a symbolic link
+
+```
+php artisan storage:link
+```
+
+Don't forget to setup and run the queue worker and websocket server
+
+```
+php artisan queue:work | php artisan queue:listen
+php artisan websockets:serve
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> Copyright (C) 2023 Muhammad Habib Fery.  
+**[⬆ back to top](#jersey-avenue)**
+
+[Frontend Features]:#frontend-features
+[Admin Panel Features]:#admin-panel-features
+[Requirements]:#requirements
+[Install]:#install
+[How to setting]:#how-to-setting
+[License]:#license
