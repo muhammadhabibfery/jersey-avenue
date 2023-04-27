@@ -3,7 +3,7 @@ Jersey Avenue
 </h1>
 
 <h5 align="center">
-Jersey Avenue is a interactive SPA project using TALL Stack (TailwindCSS, AlpineJS, Laravel, Livewire).
+Jersey Avenue is an interactive SPA project using TALL Stack (TailwindCSS, AlpineJS, Laravel, Livewire).
 </h5>
 
 <p align="center">
