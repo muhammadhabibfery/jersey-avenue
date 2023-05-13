@@ -19,7 +19,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('city_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('name', 90);
-            $table->string('username', 35)->unique()->index();
+            $table->string('username', 35)->unique()->index()->nullable();
             $table->string('email', 35)->unique();
             $table->string('phone', 13)->unique()->nullable();
             $table->enum('role', User::$roles);

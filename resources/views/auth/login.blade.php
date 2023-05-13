@@ -10,6 +10,9 @@
             {{ __('Login') }}
         </div>
 
+        <!-- Social Authentication -->
+        <x-social-auth description="Login"></x-social-auth>
+
         <!-- Session Status -->
         <x-auth-session-status :status="session('status')" />
 
@@ -17,7 +20,7 @@
         <div>
             <x-input-label for="username" :value="__('Username / Email')" />
             <x-text-input id="username" class="block w-full mt-1" type="text" name="username" :value="old('username')"
-                required autofocus autocomplete="username" />
+                required autocomplete="username" />
             <x-input-error :messages="$errors->get('username')"
                 class="p-1 pl-2 mt-2 border border-red-500 rounded-md bg-slate-200/75" />
         </div>

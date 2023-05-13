@@ -22,6 +22,7 @@ class UserFactory extends Factory
         $name = fake()->name();
 
         return [
+            'google_id' => null,
             'city_id' => null,
             'name' => $name,
             'username' => str($name)->slug('')->value(),

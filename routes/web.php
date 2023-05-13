@@ -5,6 +5,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 use App\Notifications\OrderNotification;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\SocialiteController;
 use App\Models\User;
 
 /*
@@ -18,6 +19,8 @@ use App\Models\User;
 |
 */
 
+Route::get("/auth/google", [SocialiteController::class, "redirectToGoogle"])->name("auth.redirect.google");
+Route::get("/auth/google/callback", [SocialiteController::class, "handleGoogleCallback"])->name("auth.callback.google");
 Route::get('/admin/login', fn (): RedirectResponse => to_route('login'))
     ->name('filament.auth.login');
 Route::post('/checkout/payment/notification/', [CheckoutController::class, 'notificationHandler'])

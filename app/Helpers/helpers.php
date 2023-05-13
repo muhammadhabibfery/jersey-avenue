@@ -151,3 +151,13 @@ function getEmployees(): ?Collection
     return User::where('role', '!=', User::$roles[2])
         ->get();
 }
+
+/**
+ * Check session route.
+ */
+function checkSessionRoute(): string
+{
+    return session()->has('cartRoute')
+        ? session()->pull('cartRoute')
+        : route('home');
+}
