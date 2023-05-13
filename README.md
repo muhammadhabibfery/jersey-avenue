@@ -69,11 +69,12 @@ Jersey Avenue is an interactive SPA project using TALL Stack (TailwindCSS, Alpin
 	PHP = ^8.1
     laravel = ^10.x
     laravel/breeze = ^1.x
+    laravel/socialite = ^5.x
     filament/filament = ^2.x
     midtrans/midtrans-php = ^2.x
     pusher/pusher-php-server = ^7.x
     beyondcode/laravel-websockets = ^1.x
-    barryvdh/laravel-debugbar: ^3.x
+    barryvdh/laravel-debugbar = ^3.x
 
     NPM packages:
     tailwindcss = ^3.x
@@ -142,10 +143,14 @@ PUSHER_APP_CLUSTER=mt1
 
 RAJAONGKIR_API_KEY=<Your-API-Key>
 
-MIDTRANS_SERVER_KEY = <Your-Server-Key>
-MIDTRANS_PRODUCTION = false
-MIDTRANS_SANITIZED = true
-MIDTRANS_3DS = true|false   (Just choose one)
+MIDTRANS_SERVER_KEY=<Your-Server-Key>
+MIDTRANS_PRODUCTION=false
+MIDTRANS_SANITIZED=true
+MIDTRANS_3DS=true|false   (Just choose one)
+
+GOOGLE_CLIENT_ID=<Your-Client-Key>
+GOOGLE_CLIENT_SECRET=<Your-Secret-Key>
+GOOGLE_CLIENT_REDIRECT=<Your-URI-Callback>
 
 <!-- If you are using laravel valet and https protocol, add your valet path below -->
 LARAVEL_WEBSOCKETS_SSL_LOCAL_CERT='/Users/YOUR-USERNAME/.config/valet/Certificates/VALET-SITE.TLD.crt'
